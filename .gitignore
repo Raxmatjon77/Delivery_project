@@ -5,6 +5,5 @@ env
 pipenv
 pipfile*
 
-db.sqlite3
 
-*initial.py
+

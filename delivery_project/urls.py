@@ -7,6 +7,8 @@ urlpatterns = [
     path("",landing ,name="landing"),
     path('admin/', admin.site.urls),
     path('users/',include('users.urls')),
+    path('products/',include('products.urls')),
+    path('restaurants/',include('restaurants.urls'))
 ]
 
 if settings.DEBUG:

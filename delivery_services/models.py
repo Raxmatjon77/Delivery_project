@@ -3,17 +3,7 @@ from products.models import Product
 from users.models import User
 from restaurants.models import Restaurants
 # Create your models here.
-class DeliveryService(models.Model):
-    name=models.CharField(max_length=100, unique=True)
-    about_service=models.TextField()
-    service_logo=models.ImageField(upload_to='service_logo',default='default_service_logo.jpg',blank=True)
-    
-    
-    
-    def __str__(self):
-        return f"{self.name}"
-    
-# Create your models here.
+
 class Delivery(models.Model):
     class IS_DELIVERED(models.TextChoices):
         PENDING=('Pending','pending'),
