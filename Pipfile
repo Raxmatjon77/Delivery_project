@@ -6,9 +6,9 @@ name = "pypi"
 [packages]
 django = "*"
 pillow = "*"
+crispy-bootstrap5 = "*"
 
 [dev-packages]
 
 [requires]
 python_version = "3.11"
-
