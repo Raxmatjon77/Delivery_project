@@ -1,5 +1,13 @@
 from django.contrib import admin
-from .models import Delivery
-# Register your models here.
+from .models import Delivery, DeliverySet
 
-admin.site.register(Delivery)
+
+class DeliverySetInline(admin.TabularInline):
+    model = DeliverySet
+    extra = 1
+    
+
+class DeliveryProductAdmin(admin.ModelAdmin):
+    inlines = [DeliverySetInline]
+
+admin.site.register(Delivery, DeliveryProductAdmin)

@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'restaurants',
     'products',
     'delivery_services',
-     "crispy_forms",
+    "crispy_forms",
     "crispy_bootstrap5",
 ]
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"

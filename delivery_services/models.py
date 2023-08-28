@@ -1,8 +1,8 @@
 from django.db import models
-from products.models import Product
+
 from users.models import User
 from restaurants.models import Restaurants
-# Create your models here.
+
 
 class Delivery(models.Model):
     class IS_DELIVERED(models.TextChoices):
@@ -12,7 +12,6 @@ class Delivery(models.Model):
         
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     restaurant = models.ForeignKey(Restaurants, on_delete=models.CASCADE)
-    products = models.ManyToManyField(Product)
     delivery_address = models.CharField(max_length=100)
     delivery_date = models.DateField()
    
@@ -21,3 +20,8 @@ class Delivery(models.Model):
     
     def __str__(self):
         return f"{self.products.all() }  from {self.restaurant} to {self.user} , {self.delivery_address}"
+
+
+class DeliverySet(models.Model):
+    delivery = models.ForeignKey(Delivery, on_delete=models.CASCADE)
+    pruduct = models.ForeignKey('products.Product', on_delete=models.CASCADE)
